@@ -12,7 +12,7 @@ from read_utils import setup_ocr_tool
 
 DATA_PATH = Path(__file__).parents[1].joinpath('data')
 
-tool_path = '/usr/local/bin/tesseract'
+tool_path = '/usr/bin/tesseract'
 file_name = 'test_heian_cut.png'
 key_maps = {'縁談': 1, '学業': 2, '商業': 3, '願望': 4, '失物': 5, '病気': 6}
 tool, builder = setup_ocr_tool(tool_path)
@@ -47,7 +47,7 @@ def scan(img_base64: str):
             img = preprocess(img)
             text = tool.image_to_string(img, lang='jpn_vert', builder=builder)
             texts.append(text)
-        
+
         # 特定のカテゴリを抽出
         oracles = []
         texts = sum([text.split('\n') for text in texts], [])  # flatten
@@ -78,13 +78,13 @@ def score(params):
     try:
         # speciality = params['speciality']
         # categories = params['categories']
-        
+
         ### ChatGPT API
         with open(DATA_PATH.joinpath('gpt_response.json'), 'r') as f:
             response = json.load(f)
         # print(response)
         # return JSONResponse(status_code=200, content={response})
         return response
-        
+
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": f"Failed to process scoring: {str(e)}"})

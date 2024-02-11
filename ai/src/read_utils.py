@@ -15,7 +15,7 @@ def setup_ocr_tool(tool_path: str) -> list[object]:
         list[object]: OCRのモデルとコンフィグクラス
     """
     TESSERACT_PATH = tool_path
-    TESSDATA_PATH = '/usr/local/Cellar/tesseract/5.3.4/share/tessdata/'
+    TESSDATA_PATH = '/usr/share/tesseract-ocr/5/tessdata/'
 
     os.environ['PATH'] += os.pathsep + TESSERACT_PATH
     os.environ['TESSDATA_PREFIX'] = TESSDATA_PATH
