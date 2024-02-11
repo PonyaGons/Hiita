@@ -70,7 +70,7 @@ Hiitaでは、おみくじを簡単に記録し後から簡単に振り返るこ
 * Spring Boot
 
 ### OCRモデル
-
+* Tesseract OCR
 
 ### 生成AIモデル
 * OpenAI GPT3 TURBO
