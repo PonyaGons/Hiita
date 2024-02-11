@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "hiita"
+version = "0.1.0"
+description = ""
+authors = ["gengen"]
+readme = "README.md"
+packages = [{include = "hiita"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytesseract = "^0.3.10"
+pillow = "^10.2.0"
+pyocr = "^0.8.5"
+pdfminer-six = "^20231228"
+numpy = "^1.26.4"
+fastapi = "^0.109.2"
+uvicorn = {extras = ["standard"], version = "^0.27.1"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = '\.py$'
+skip-string-normalization = true
+exclude = '''
+(
+      \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | venv
+    | \.idea
+    | \.vscode
+    | _build
+    | buck-out
+    | build
+    | dist
+    | migrations
+)
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120
+skip_glob = "*/migrations/*.py"
