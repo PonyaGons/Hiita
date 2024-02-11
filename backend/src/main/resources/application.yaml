@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hiita?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: hiita
+    password: hiita
+  flyway:
+    locations: classpath:db/migration
