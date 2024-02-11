@@ -10,6 +10,11 @@
             contain>
             </v-img>
         </v-app-bar-title>
+        <!-- <div class="year_changer" v-if="year !== null">
+            <v-btn block @click=""><</v-btn>
+            <v-btn block @click="">{{ year }}</v-btn>
+            <v-btn block @click="">></v-btn>
+        </div> -->
       </v-app-bar>
         <!-- <img class="header-logo" src="/img/logo.png" alt="Hiita" /> -->
     </header>

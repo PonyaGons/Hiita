@@ -8,6 +8,12 @@
             </label>
         </div>
         <!-- Preview -->
+        <!-- <v-btn v-if="omikujiImg !== null">Upload</v-btn> -->
+        <v-btn
+            v-if="omikujiImg !== null"
+            :loading="uploading"
+            @click="uploading = !uploading"
+        >Upload!!</v-btn>   
         <div v-show="omikujiImg" class="img_preview">
             <div class="img_preview_circle" @click="clearAttachImg">
                 <span class="img_preview_circle_close-icon">［取り消し］</span>
@@ -25,7 +31,8 @@ import loadImage from 'blueimp-load-image';
 export default {
     data() {
         return {
-            omikujiImg: null
+            omikujiImg: null,
+            uploading: false,
         };
     },
     destroyed() {
@@ -78,8 +85,18 @@ export default {
             return new Blob([buffer.buffer], {
                 type: fileType ? fileType : 'image/png'
             });
-        }
-    }
+        },
+    },
+    watch: {
+      uploading (val) {
+        if (!val) return
+
+        setTimeout(() => {
+            this.uploading = false;
+            this.$router.push('/');
+        }, 2000)
+      },
+    },
 };
 </script>
 
