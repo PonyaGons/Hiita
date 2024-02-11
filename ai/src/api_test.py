@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 import openai
-openai.api_key = "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"
+openai.api_key = "your-api-key"
 
 PROMPT_PATH = Path(__file__).parents[1].joinpath('scripts')
 
