@@ -69,6 +69,9 @@ Hiitaでは、おみくじを簡単に記録し後から簡単に振り返るこ
 * kotlin
 * Spring Boot
 
+### インフラ
+* Docker
+
 ### OCRモデル
 * Tesseract OCR
 
